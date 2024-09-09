@@ -6,6 +6,14 @@ const storiesRightButton = document.querySelector('.stories__right-button');
 const posts = document.querySelectorAll('.post');
 const postsContent = document.querySelectorAll('.post__content');
 
+document.getElementById('changeColorButton').addEventListener('click', function() {
+   
+  var textElement = document.getElementById('sidebar');
+
+  textElement.style.color = 'white'; 
+});
+
+
 document.onload = setInitialTheme(localStorage.getItem('theme'));
 function setInitialTheme(themeKey) {
   if (themeKey === 'dark') {
