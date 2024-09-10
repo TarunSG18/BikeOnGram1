@@ -1,0 +1,67 @@
+<html></html>
+<head>
+  <title>BikeOnGram</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-chatbot@1.0.0/dist/simple-chatbot.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <!-- sidebar content -->
+    </div>
+    <div class="content">
+      <div class="header">
+        <h1>BikeOnGram</h1>
+        <div class="links">
+          <!-- links -->
+        </div>
+      </div>
+      <div class="stories">
+        <!-- stories -->
+      </div>
+      <div class="post">
+        <!-- posts -->
+      </div>
+      <div class="chatbot-container">
+        <h2>Bike Chatbot</h2>
+        <input id="user-input" type="text" placeholder="Ask me about your bike...">
+        <button id="send-btn">Send</button>
+        <div id="chat-log"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const chatbot = new SimpleChatbot({
+      knowledge: [
+        {
+          question: "What is the purpose of the chain?",
+          answer: "The chain is used to transfer power from the pedals to the wheels, allowing the bike to move."
+        },
+        {
+          question: "How do I fix a flat tire?",
+          answer: "To fix a flat tire, you'll need to remove the wheel, take out the tube, and inspect the tire for punctures. Then, patch the tube or replace it, and reassemble the wheel."
+        },
+        {
+          question: "What is the function of the brakes?",
+          answer: "The brakes are used to slow or stop the bike by applying friction to the wheels."
+        },
+        {
+          question: "How do I adjust the derailleur?",
+          answer: "To adjust the derailleur, you'll need to loosen the limit screws, adjust the barrel adjuster, and tighten the limit screws again. Make sure to check the derailleur's alignment and limit screws regularly."
+        },
+        // Add more knowledge entries here...
+      ]
+    });
+
+    document.getElementById("send-btn").addEventListener("click", () => {
+      const userInput = document.getElementById("user-input").value;
+      const response = chatbot.respond(userInput);
+      document.getElementById("chat-log").innerHTML += `<p>You: ${userInput}</p><p>Bike Chatbot: ${response}</p>`;
+      document.getElementById("user-input").value = "";
+    });
+  </script>
+</body>
+</html>
