@@ -13,6 +13,26 @@ document.getElementById('changeColorButton').addEventListener('click', function(
   textElement.style.color = 'white'; 
 });
 
+    function validateLogin() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+       
+        if (username === "" || password === "") {
+            document.getElementById('error-message').textContent = "Please fill out all fields.";
+            return false;
+        }
+
+        if (username === "admin" && password === "12345") {
+            alert("Login successful!");
+            return true; 
+        } else {
+            document.getElementById('error-message').textContent = "Invalid username or password.";
+            return false; 
+        }
+    }
+
+
 
 document.onload = setInitialTheme(localStorage.getItem('theme'));
 function setInitialTheme(themeKey) {
