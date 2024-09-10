@@ -24,11 +24,11 @@ $stmt = $conn->prepare("SELECT password FROM users WHERE username = ?");
 $stmt->bind_param("s", $user_input);
 $stmt->execute();
 $stmt->store_result();
-<?php
+
 $password = 'password';
 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 echo $hashed_password; 
-?>
+
 
 
 if ($stmt->num_rows > 0) {
