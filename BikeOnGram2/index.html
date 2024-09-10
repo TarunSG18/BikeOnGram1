@@ -1,93 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BikeOnGram.Rentals</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-
-  <div class="navbar">
-    <a href="#home">Home</a>
-    <a href="#catalog">Bikes</a>
-    <a href="#booking">Book Now</a>
-    <a href="#contact">Contact</a>
-  </div>
-
-
-  <div class="banner">
-    
-  </div>
-
- 
-  <div class="content" id="catalog">
-    <h2>Available Bikes</h2>
-    <div class="bike">
-      <img src="duke.jpeg" alt="Mountain Bike">
-      <h3>KTM Duke 390</h3>
-      <p>Price: ₹2000/day</p>
-      <button>Rent now</button>
+<html>
+ <head>
+  <title>
+   Bike Rentals
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100">
+  <nav class="bg-gray-800 p-4">
+   <div class="container mx-auto flex justify-between items-center">
+    <div class="text-white text-lg font-semibold">
+     Bike Rentals
     </div>
-    <div class="bike">
-      <img src="ns.jpeg" alt="Road Bike">
-      <h3>Bajaj Pulsar 400Z</h3>
-      <p>Price: ₹1500/day</p>
-      <button>Rent now</button>
+    <div>
+     <a class="text-white px-4" href="#">
+      Home
+     </a>
+     <a class="text-white px-4" href="#">
+      Bikes
+     </a>
+     <a class="text-white px-4" href="#">
+      Book Now
+     </a>
+     <a class="text-white px-4" href="#">
+      Contact
+     </a>
     </div>
-    <div class="bike">
-      <img src="rtr.jpeg" alt="Electric Bike">
-      <h3>TVS Apache RTR 310</h3>
-      <p>Price: ₹1450/day</p>
-      <button>Rent now</button>
+   </div>
+  </nav>
+  <div class="container mx-auto mt-8">
+   <h1 class="text-2xl font-bold mb-4">
+    Available Bikes
+   </h1>
+   <div class="grid grid-cols-2 gap-4">
+    <div class="bg-white p-4 rounded-lg shadow-md">
+     <img alt="KTM Duke 390 motorcycle" class="w-full h-48 object-cover mb-4" height="200" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-os8FA6ALoWnbM8Rk6Qp2tCw5.png?st=2024-09-10T19%3A19%3A05Z&amp;se=2024-09-10T21%3A19%3A05Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-09T23%3A40%3A06Z&amp;ske=2024-09-10T23%3A40%3A06Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=twmc8vpramM4RsqUfudZRL4XFcdpvkai/tRvOclXgVo%3D" width="300"/>
+     <h2 class="text-xl font-semibold mb-2">
+      KTM Duke 390
+     </h2>
+     <p class="text-gray-700 mb-4">
+      Price: ₹2000/day
+     </p>
+     <a class="bg-green-500 text-white px-4 py-2 rounded inline-block" href="#">
+      Rent now
+     </a>
     </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+     <img alt="Bajaj Pulsar 400Z motorcycle" class="w-full h-48 object-cover mb-4" height="200" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-CDmUGpjONd1Vi75bHj6N6zmA.png?st=2024-09-10T19%3A19%3A05Z&amp;se=2024-09-10T21%3A19%3A05Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-09T23%3A03%3A58Z&amp;ske=2024-09-10T23%3A03%3A58Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=LWGDQ35TIZvFQlUCxAv25OD5Yk7YyVtmOdsrvdsZ2QU%3D" width="300"/>
+     <h2 class="text-xl font-semibold mb-2">
+      Bajaj Pulsar 400Z
+     </h2>
+     <p class="text-gray-700 mb-4">
+      Price: ₹1500/day
+     </p>
+     <a class="bg-green-500 text-white px-4 py-2 rounded inline-block" href="bog con/indexrent.html">
+      Rent now
+     </a>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <img alt="Bajaj Pulsar 400Z motorcycle" class="w-full h-48 object-cover mb-4" height="200" src="data:image/jpeg;base64,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" width="300"/>
+      <h2 class="text-xl font-semibold mb-2">
+       Apache RTR
+      </h2>
+      <p class="text-gray-700 mb-4">
+       Price: ₹1500/day
+      </p>
+      <a class="bg-green-500 text-white px-4 py-2 rounded inline-block" href="#">
+       Rent now
+      </a>
+     </div>
+
+   </div>
   </div>
-
-
- 
-    
-      <form action="book.php" method="POST">
-        <h2>Book Your Ride</h2>
-        <form action="/book" method="POST">
-          <label for="bike">Choose Your Bike</label>
-          <select id="bike" name="bike">
-            <option value="mountain-bike">KTM Duke 390</option>
-            <option value="road-bike">Bajaj Pulsar 400Z</option>
-            <option value="electric-bike">TVS Apache RTR 310</option>
-          </select>
-          <label for="rental-date">Rental Date</label>
-          <input type="date" id="rental-date" name="rental-date" required>
-          <label for="rental-duration">Rental Duration (Days)</label>
-          <input type="number" id="rental-duration" name="rental-duration" required>
-          <label for="user-name">Your Name</label>
-          <input type="text" id="user-name" name="user-name" required>
-          <label for="user-email">Your Email</label>
-          <input type="email" id="user-email" name="user-email" required>
-          <button type="submit">Book Now</button>
-      </form>
-    
-  </div>
-
-  <div class="contact-section" id="contact">
-    <h2>Contact Us</h2>
-    
-      <form action="contact.php" method="POST">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-   
-  </div>
-
-
-  <div class="footer">
-    <p>&copy; 2024 BikeOnGram. All Rights Reserved.</p>
-  </div>
-
-</body>
+ </body>
 </html>
