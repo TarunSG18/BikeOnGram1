@@ -1,222 +1,253 @@
-<html>
-<head>
-    <title>BikeOnGram</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body class="bg-gray-100 font-roboto">
-    <div class="flex">
-        <!-- Sidebar -->
-        <div class="w-1/4 h-screen bg-white border-r border-gray-300">
-            <div class="p-4">
-                <div class="flex items-center justify-between">
-                    <i class="fas fa-moon text-2xl"></i>
-                </div>
-                <div class="mt-8">
-                    <div class="flex items-center p-4 bg-red-400 rounded-lg mb-4">
-                        <i class="fas fa-home text-2xl text-white"></i>
-                        <span class="ml-4 text-white text-lg">Home</span>
-                    </div>
-                    <div class="flex items-center p-4 mb-4">
-                        <i class="fas fa-search text-2xl"></i>
-                        <span class="ml-4 text-lg">Search</span>
-                    </div>
-                    <div class="flex items-center p-4 mb-4">
-                        <i class="fas fa-compass text-2xl"></i>
-                        <span class="ml-4 text-lg">Explore</span>
-                    </div>
-                    <div class="flex items-center p-4 mb-4">
-                        <i class="fas fa-video text-2xl"></i>
-                        <span class="ml-4 text-lg">Reels</span>
-                    </div>
-                    <div class="flex items-center p-4 mb-4">
-                        <i class="fas fa-comment-dots text-2xl"></i>
-                        <span class="ml-4 text-lg">Messages</span>
-                    </div>
-                    <div class="flex items-center p-4 mb-4">
-                        <i class="fas fa-bell text-2xl"></i>
-                        <span class="ml-4 text-lg">Notification</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Main Content -->
-        <div class="w-3/4 p-8">
-            <div class="flex justify-between items-center mb-8">
-                <h1 class="text-4xl font-bold text-gray-800">BikeOnGram</h1>
-                <div class="flex space-x-8">
-                    <a href="#" class="text-lg flex items-center text-gray-600 hover:text-gray-800 transition duration-300">
-                        <i class="fas fa-key text-xl mr-2"></i>Ownership
-                    </a>
-                    <a href="#" class="text-lg flex items-center text-gray-600 hover:text-gray-800 transition duration-300">
-                        <i class="fas fa-bicycle text-xl mr-2"></i>Rental
-                    </a>
-                    <a href="#" class="text-lg flex items-center text-gray-600 hover:text-gray-800 transition duration-300">
-                        <i class="fas fa-user text-xl mr-2"></i>Profile
-                    </a>
-                </div>
-            </div>
-            <div class="flex space-x-4 mb-8 overflow-x-auto">
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border-2 border-red-500"></div>
-                    <span class="mt-2 text-sm">vishwas</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border-2 border-gray-300"></div>
-                    <span class="mt-2 text-sm">satwik</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border-2 border-gray-300"></div>
-                    <span class="mt-2 text-sm">venkatesh</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border-2 border-gray-300"></div>
-                    <span class="mt-2 text-sm">sapirth</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border-2 border-gray-300"></div>
-                    <span class="mt-2 text-sm">sallu bhai</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border-2 border-gray-300"></div>
-                    <span class="mt-2 text-sm">bill gates</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border-2 border-gray-300"></div>
-                    <span class="mt-2 text-sm">steve jobs</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border-2 border-gray-300"></div>
-                    <span class="mt-2 text-sm">virat kohli</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border-2 border-gray-300"></div>
-                    <span class="mt-2 text-sm">a b devillers</span>
-                </div>
-            </div>
-            <div class="space-y-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-300"></div>
-                            <div class="ml-4">
-                                <span class="font-bold text-gray-800">tarun s g</span>
-                                <span class="block text-sm text-gray-500">30 MINUTES AGO</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-ellipsis-h text-gray-600"></i>
-                    </div>
-                    <div class="mb-4">
-                        <p class="text-gray-800">Liked by Shah Rukh Khan and 73 others</p>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex space-x-4">
-                            <i class="far fa-heart text-2xl text-gray-600 hover:text-red-500 transition duration-300"></i>
-                            <i class="far fa-comment text-2xl text-gray-600 hover:text-blue-500 transition duration-300"></i>
-                            <i class="far fa-paper-plane text-2xl text-gray-600 hover:text-green-500 transition duration-300"></i>
-                        </div>
-                        <i class="far fa-bookmark text-2xl text-gray-600 hover:text-yellow-500 transition duration-300"></i>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-300"></div>
-                            <div class="ml-4">
-                                <span class="font-bold text-gray-800">usernick1</span>
-                                <span class="block text-sm text-gray-500">1 HOUR AGO</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-ellipsis-h text-gray-600"></i>
-                    </div>
-                    <div class="mb-4">
-                        <p class="text-gray-800">Liked by user123 and 73 others</p>
-                        <p class="text-gray-800">usernick1 Multiple media post example. This post has three images!</p>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex space-x-4">
-                            <i class="far fa-heart text-2xl text-gray-600 hover:text-red-500 transition duration-300"></i>
-                            <i class="far fa-comment text-2xl text-gray-600 hover:text-blue-500 transition duration-300"></i>
-                            <i class="far fa-paper-plane text-2xl text-gray-600 hover:text-green-500 transition duration-300"></i>
-                        </div>
-                        <i class="far fa-bookmark text-2xl text-gray-600 hover:text-yellow-500 transition duration-300"></i>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-300"></div>
-                            <div class="ml-4">
-                                <span class="font-bold text-gray-800">usernick2</span>
-                                <span class="block text-sm text-gray-500">3 HOURS AGO</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-ellipsis-h text-gray-600"></i>
-                    </div>
-                    <div class="mb-4">
-                        <p class="text-gray-800">Liked by user123 and 73 others</p>
-                        <p class="text-gray-800">usernick2 Single media post example.</p>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex space-x-4">
-                            <i class="far fa-heart text-2xl text-gray-600 hover:text-red-500 transition duration-300"></i>
-                            <i class="far fa-comment text-2xl text-gray-600 hover:text-blue-500 transition duration-300"></i>
-                            <i class="far fa-paper-plane text-2xl text-gray-600 hover:text-green-500 transition duration-300"></i>
-                        </div>
-                        <i class="far fa-bookmark text-2xl text-gray-600 hover:text-yellow-500 transition duration-300"></i>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-300"></div>
-                            <div class="ml-4">
-                                <span class="font-bold text-gray-800">usernick3</span>
-                                <span class="block text-sm text-gray-500">1 DAY AGO</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-ellipsis-h text-gray-600"></i>
-                    </div>
-                    <div class="mb-4">
-                        <p class="text-gray-800">Liked by user123 and 73 others</p>
-                        <p class="text-gray-800">usernick3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique laudantium consequuntur vitae impedit eaque? Accusantium rem vel ducimus perspiciatis nesciunt a minus minima earum delectus. Doloremque consequuntur ducimus illum placeat!</p>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex space-x-4">
-                            <i class="far fa-heart text-2xl text-gray-600 hover:text-red-500 transition duration-300"></i>
-                            <i class="far fa-comment text-2xl text-gray-600 hover:text-blue-500 transition duration-300"></i>
-                            <i class="far fa-paper-plane text-2xl text-gray-600 hover:text-green-500 transition duration-300"></i>
-                        </div>
-                        <i class="far fa-bookmark text-2xl text-gray-600 hover:text-yellow-500 transition duration-300"></i>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-300"></div>
-                            <div class="ml-4">
-                                <span class="font-bold text-gray-800">usernick4</span>
-                                <span class="block text-sm text-gray-500">1 DAY AGO</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-ellipsis-h text-gray-600"></i>
-                    </div>
-                    <div class="mb-4">
-                        <p class="text-gray-800">Liked by user123 and 73 others</p>
-                        <p class="text-gray-800">usernick4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus voluptates expedita ab vel dolore voluptatem rerum repudiandae unde temporibus sed quos quis illo, voluptatum, asperiores, doloremque distinctio. Quisquam, voluptates. Quis, illo.</p>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex space-x-4">
-                            <i class="far fa-heart text-2xl text-gray-600 hover:text-red-500 transition duration-300"></i>
-                            <i class="far fa-comment text-2xl text-gray-600 hover:text-blue-500 transition duration-300"></i>
-                            <i class="far fa-paper-plane text-2xl text-gray-600 hover:text-green-500 transition duration-300"></i>
-                        </div>
-                        <i class="far fa-bookmark text-2xl text-gray-600 hover:text-yellow-500 transition duration-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+<html></html>
+ <head>
+  <title>
+   BikeOnGram
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+  <div class="container">
+   <div class="sidebar">
+    <a class="active" href="#">
+     <i class="fas fa-home">
+     </i>
+     Home
+    </a>
+    <a href="#">
+     <i class="fas fa-search">
+     </i>
+     Search
+    </a>
+    <a href="#">
+     <i class="fas fa-compass">
+     </i>
+     Explore
+    </a>
+    <a href="#">
+     <i class="fas fa-video">
+     </i>
+     Reels
+    </a>
+    <a href="#">
+     <i class="fas fa-envelope">
+     </i>
+     Messages
+    </a>
+    <a href="#">
+     <i class="fas fa-bell">
+     </i>
+     Notification
+    </a>
+   </div>
+   <div class="content">
+    <div class="header">
+     <h1>
+      BikeOnGram
+     </h1>
+     <div class="links">
+      <a href="#">
+       <i class="fas fa-key"></i> Ownership
+      </a>
+      <a href="#">
+       <i class="fas fa-bicycle"></i> Rental
+      </a>
+      <a href="#">
+       <i class="fas fa-user"></i> Profile
+      </a>
+     </div>
     </div>
-</body>
+    <div class="stories">
+     <div class="story">
+     </div>
+     <div class="story">
+     </div>
+     <div class="story">
+     </div>
+     <div class="story">
+     </div>
+     <div class="story">
+     </div>
+     <div class="story">
+     </div>
+     <div class="story">
+     </div>
+     <div class="story">
+     </div>
+     <div class="story">
+     </div>
+     <div class="story">
+     </div>
+    </div>
+    <div class="post">
+     <div class="user">
+      <img alt="User profile picture" height="40" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-ViiNaPpkgzrcJYaNOnBCqS7i.png?st=2024-09-10T09%3A54%3A22Z&amp;se=2024-09-10T11%3A54%3A22Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-09T23%3A15%3A39Z&amp;ske=2024-09-10T23%3A15%3A39Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=pjAeFMgZO%2BytAuNYvqLmS5SfISrNaecI4nMB5FSVFIA%3D" width="40"/>
+      <div>
+       <div class="name">
+        tarun s g
+       </div>
+       <div class="time">
+        30 MINUTES AGO
+       </div>
+      </div>
+     </div>
+     <div class="content">
+      Liked by Shah Rukh Khan and 73 others
+     </div>
+     <div class="actions">
+      <div class="left">
+       <i class="far fa-heart">
+       </i>
+       <i class="far fa-comment">
+       </i>
+       <i class="far fa-paper-plane">
+       </i>
+      </div>
+      <div class="right">
+       <i class="fas fa-ellipsis-h">
+       </i>
+       <i class="far fa-bookmark">
+       </i>
+      </div>
+     </div>
+    </div>
+    <div class="post">
+     <div class="user">
+      <img alt="User profile picture" height="40" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-ViiNaPpkgzrcJYaNOnBCqS7i.png?st=2024-09-10T09%3A54%3A22Z&amp;se=2024-09-10T11%3A54%3A22Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-09T23%3A15%3A39Z&amp;ske=2024-09-10T23%3A15%3A39Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=pjAeFMgZO%2BytAuNYvqLmS5SfISrNaecI4nMB5FSVFIA%3D" width="40"/>
+      <div>
+       <div class="name">
+        usernick1
+       </div>
+       <div class="time">
+        1 HOUR AGO
+       </div>
+      </div>
+     </div>
+     <div class="content">
+      Liked by user123 and 73 others
+      <br/>
+      usernick1 Multiple media post example. This post has three images!
+     </div>
+     <div class="actions">
+      <div class="left">
+       <i class="far fa-heart">
+       </i>
+       <i class="far fa-comment">
+       </i>
+       <i class="far fa-paper-plane">
+       </i>
+      </div>
+      <div class="right">
+       <i class="fas fa-ellipsis-h">
+       </i>
+       <i class="far fa-bookmark">
+       </i>
+      </div>
+     </div>
+    </div>
+    <div class="post">
+     <div class="user">
+      <img alt="User profile picture" height="40" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-ViiNaPpkgzrcJYaNOnBCqS7i.png?st=2024-09-10T09%3A54%3A22Z&amp;se=2024-09-10T11%3A54%3A22Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-09T23%3A15%3A39Z&amp;ske=2024-09-10T23%3A15%3A39Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=pjAeFMgZO%2BytAuNYvqLmS5SfISrNaecI4nMB5FSVFIA%3D" width="40"/>
+      <div>
+       <div class="name">
+        usernick2
+       </div>
+       <div class="time">
+        3 HOURS AGO
+       </div>
+      </div>
+     </div>
+     <div class="content">
+      Liked by user123 and 73 others
+      <br/>
+      usernick2 Single media post example.
+     </div>
+     <div class="actions">
+      <div class="left">
+       <i class="far fa-heart">
+       </i>
+       <i class="far fa-comment">
+       </i>
+       <i class="far fa-paper-plane">
+       </i>
+      </div>
+      <div class="right">
+       <i class="fas fa-ellipsis-h">
+       </i>
+       <i class="far fa-bookmark">
+       </i>
+      </div>
+     </div>
+    </div>
+    <div class="post">
+     <div class="user">
+      <img alt="User profile picture" height="40" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-ViiNaPpkgzrcJYaNOnBCqS7i.png?st=2024-09-10T09%3A54%3A22Z&amp;se=2024-09-10T11%3A54%3A22Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-09T23%3A15%3A39Z&amp;ske=2024-09-10T23%3A15%3A39Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=pjAeFMgZO%2BytAuNYvqLmS5SfISrNaecI4nMB5FSVFIA%3D" width="40"/>
+      <div>
+       <div class="name">
+        usernick3
+       </div>
+       <div class="time">
+        1 DAY AGO
+       </div>
+      </div>
+     </div>
+     <div class="content">
+      Liked by user123 and 73 others
+      <br/>
+      usernick3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique laudantium consequuntur vitae impedit eaque? Accusantium rem vel ducimus perspiciatis nesciunt a minus minima earum delectus. Doloremque consequuntur ducimus illum placeat!
+     </div>
+     <div class="actions">
+      <div class="left">
+       <i class="far fa-heart">
+       </i>
+       <i class="far fa-comment">
+       </i>
+       <i class="far fa-paper-plane">
+       </i>
+      </div>
+      <div class="right">
+       <i class="fas fa-ellipsis-h">
+       </i>
+       <i class="far fa-bookmark">
+       </i>
+      </div>
+     </div>
+    </div>
+    <div class="post">
+     <div class="user">
+      <img alt="User profile picture" height="40" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-ViiNaPpkgzrcJYaNOnBCqS7i.png?st=2024-09-10T09%3A54%3A22Z&amp;se=2024-09-10T11%3A54%3A22Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-09T23%3A15%3A39Z&amp;ske=2024-09-10T23%3A15%3A39Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=pjAeFMgZO%2BytAuNYvqLmS5SfISrNaecI4nMB5FSVFIA%3D" width="40"/>
+      <div>
+       <div class="name">
+        usernick4
+       </div>
+       <div class="time">
+        1 DAY AGO
+       </div>
+      </div>
+     </div>
+     <div class="content">
+      Liked by user123 and 73 others
+      <br/>
+      usernick4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus voluptates expedita ab vel dolore voluptatem rerum repudiandae unde temporibus sed quos quis illo, voluptatum, asperiores, doloremque distinctio. Quisquam, voluptates. Quis, illo.
+     </div>
+     <div class="actions">
+      <div class="left">
+       <i class="far fa-heart">
+       </i>
+       <i class="far fa-comment">
+       </i>
+       <i class="far fa-paper-plane">
+       </i>
+      </div>
+      <div class="right">
+       <i class="fas fa-ellipsis-h">
+       </i>
+       <i class="far fa-bookmark">
+       </i>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
 </html>
