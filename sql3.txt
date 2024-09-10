@@ -1,0 +1,27 @@
+DELIMITER $$
+
+CREATE PROCEDURE validate_user_login(
+    IN input_username VARCHAR(50),
+    IN input_password VARCHAR(255),
+    OUT login_success INT
+)
+BEGIN
+    DECLARE stored_password VARCHAR(255);
+    
+    -- Get the hashed password for the given username
+    SELECT password INTO stored_password FROM users WHERE username = input_username;
+    
+    -- Compare the input password with the stored hashed password using the MySQL PASSWORD function
+    IF (stored_password IS NOT NULL) THEN
+        IF (stored_password = input_password) THEN
+            SET login_success = 1; -- Password matches
+        ELSE
+            SET login_success = 0; -- Password does not match
+        END IF;
+    ELSE
+        SET login_success = 0; -- Username does not exist
+    END IF;
+    
+END $$
+
+DELIMITER ;

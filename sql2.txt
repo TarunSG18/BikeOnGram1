@@ -1,0 +1,3 @@
+-- Insert a user (the password will be hashed later in PHP)
+INSERT INTO users (username, password) 
+VALUES ('admin', '$2y$10$wHkDtiGfDEY.tOTc4yYcMekcq3GcClYkgG5FGdoHZY.oTOQoCjfzu');
