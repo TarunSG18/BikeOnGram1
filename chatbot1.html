@@ -1,0 +1,129 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo span {
+            font-weight: 400;
+        }
+        .alert {
+            animation: blink 2s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-black flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="logo mb-16 mt-12">
+        BikeOnGram <span>AI</span>
+    </div>
+    <div class="text-red-500 mb-4 alert">U should provide input only related to bike</div>
+    <div class="flex items-center bg-gray-900 p-4 rounded-full w-full max-w-lg">
+        <input id="promptInput" type="text" placeholder="Enter a prompt here" class="bg-transparent text-white flex-grow outline-none" onkeydown="handleKeyDown(event)">
+        <i class="fas fa-microphone text-gray-400 ml-4"></i>
+    </div>
+    <div id="aiResponse" class="mt-4 text-gray-400"></div>
+    <div id="outputBox" class="bg-gray-200 text-black p-16 rounded-lg mt-4 w-full max-w-lg"></div>
+
+    <script>
+        const bikeQA = {
+            "frame": {
+                info: "A bike frame is the main structure of the bicycle, typically made from materials like aluminum, steel, carbon fiber, or titanium. It supports the rider and connects all the bike components.",
+                repair: "To repair a bike frame, inspect for cracks or damage. Small cracks can sometimes be welded or patched, but significant damage may require frame replacement.",
+                tools: "Tools needed: Frame alignment gauge, welding equipment (if applicable), sandpaper, and touch-up paint."
+            },
+            "gear": {
+                info: "Bike gears are mechanisms that help you adjust the bike's resistance and speed. They consist of chainrings, cogs, and derailleurs, allowing you to shift between different gear ratios.",
+                repair: "To repair bike gears, ensure the derailleurs are properly aligned, adjust the limit screws, and check the cable tension. Clean and lubricate the gears regularly.",
+                tools: "Tools needed: Screwdrivers, hex keys, chain checker, and lubricant."
+            },
+            "saddle": {
+                info: "A bike saddle is the seat of the bicycle where the rider sits. It comes in various shapes and sizes to provide comfort and support during rides.",
+                repair: "To repair a bike saddle, check for any tears or damage. Replace the saddle if it's worn out. Adjust the saddle height and angle for optimal comfort.",
+                tools: "Tools needed: Allen wrench, saddle cover (if applicable), and replacement saddle."
+            },
+            "handlebar": {
+                info: "Bike handlebars are the part of the bike that you hold onto while riding. They come in different styles, such as drop bars, flat bars, and riser bars, to suit different riding preferences.",
+                repair: "To repair bike handlebars, ensure they are securely fastened. Replace grips or bar tape if they are worn out. Check for any bends or cracks and replace if necessary.",
+                tools: "Tools needed: Allen wrench, bar tape, and replacement grips."
+            },
+            "pedal": {
+                info: "Bike pedals are the parts of the bike that you push with your feet to propel the bike forward. They can be flat pedals, clipless pedals, or toe clip pedals.",
+                repair: "To repair bike pedals, remove the damaged pedal with a pedal wrench, apply grease to the new pedal threads, and install the new pedal by turning it clockwise.",
+                tools: "Tools needed: Pedal wrench, grease, and replacement pedals."
+            },
+            "tire": {
+                info: "Bike tires are the rubber components that make contact with the ground. They come in various sizes and tread patterns to suit different terrains and riding styles.",
+                repair: "To repair bike tires, remove the wheel, take out the tube, find and patch the hole or replace the tube, and then reassemble the wheel. Check for any damage to the tire itself.",
+                tools: "Tools needed: Tire levers, patch kit, pump, and replacement tube."
+            },
+            "chain": {
+                info: "A bike chain is a series of linked metal rings that transfer power from the pedals to the rear wheel, propelling the bike forward.",
+                repair: "To repair a bike chain, you need a chain tool to remove the damaged link and reconnect the chain. Make sure to lubricate the chain after the repair.",
+                tools: "Tools needed: Chain tool, master link pliers, and chain lubricant."
+            },
+            "brake": {
+                info: "Bike brakes are mechanisms that slow down or stop the bike. Common types include rim brakes, disc brakes, and drum brakes.",
+                repair: "To repair bike brakes, locate the barrel adjuster on the brake lever or caliper, turn it to tighten or loosen the brake cable, and ensure the brake pads are aligned with the rim.",
+                tools: "Tools needed: Allen wrench, screwdriver, and replacement brake pads."
+            },
+            "derailleur": {
+                info: "A bike derailleur is a device that moves the chain between different gears on the rear cassette or front chainrings, allowing you to change gears.",
+                repair: "To repair a bike derailleur, adjust the limit screws, check the cable tension, and ensure the derailleur hanger is straight. If necessary, replace the derailleur or cable.",
+                tools: "Tools needed: Screwdrivers, hex keys, and replacement derailleur or cable."
+            },
+            "tools": {
+                info: "There are various tools that are essential for bike repair and maintenance. Some of the common tools include:",
+                repair: "These tools are used for various repair tasks such as adjusting brakes, fixing flat tires, and tuning gears.",
+                tools: "Common bike tools: Allen wrenches, screwdrivers, tire levers, chain tool, pedal wrench, pump, patch kit, lubricant, and multi-tool."
+            },
+            "default": {
+                info: "No information is found.",
+                repair: "No repair information is available.",
+                tools: "No tools information is available."
+            }
+        };
+
+        function handleKeyDown(event) {
+            if (event.key === 'Enter') {
+                const prompt = event.target.value.toLowerCase();
+                const responseDiv = document.getElementById('aiResponse');
+                const outputBox = document.getElementById('outputBox');
+                
+                responseDiv.innerHTML = `<p>AI Response: Processing...</p>`;
+                
+                let answer = bikeQA["default"];
+                for (const key in bikeQA) {
+                    if (prompt.includes(key) || prompt.includes(key + "s")) {
+                        answer = bikeQA[key];
+                        break;
+                    }
+                }
+                
+                if (answer === bikeQA["default"]) {
+                    responseDiv.innerHTML = `<p>AI Response: You entered "${prompt}"</p>`;
+                    outputBox.innerHTML = `<p>Output: Please provide input only related to bike.</p>`;
+                } else {
+                    responseDiv.innerHTML = `<p>AI Response: You entered "${prompt}"</p>`;
+                    outputBox.innerHTML = `<p><strong>Information:</strong> ${answer.info}</p><p><strong>How to Repair:</strong> ${answer.repair}</p><p><strong>Tools Needed:</strong> ${answer.tools}</p>`;
+                }
+                
+                event.target.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

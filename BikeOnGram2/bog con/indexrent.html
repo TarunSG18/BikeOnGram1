@@ -1,47 +1,31 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike Rental</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-        label, input {
-            display: block;
-            margin-bottom: 10px;
-        }
-        button {
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Rent a Bike</h1>
-    <form id="rentalForm">
-        <label for="bike_id">Bike ID:</label>
-        <input type="text" id="bike_id" name="bike_id"><br>
-        <label for="user_id">User ID:</label>
-        <input type="text" id="user_id" name="user_id"><br>
-        <label for="rental_duration">Rental Duration (in hours):</label>
-        <input type="number" id="rental_duration" name="rental_duration"><br>
-        <button type="submit">Rent Bike</button>
-    </form>
-
-    <h2>Blockchain Data</h2>
-    <pre id="chainData"></pre>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-white p-8 rounded shadow-md w-96">
+        <h1 class="text-2xl font-bold mb-4">Rent a Bike</h1>
+        <form id="rentalForm">
+            <div class="mb-4">
+                <label for="bike_id" class="block text-gray-700">Bike ID:</label>
+                <input type="text" id="bike_id" name="bike_id" class="w-full px-3 py-2 border border-gray-300 rounded" />
+            </div>
+            <div class="mb-4">
+                <label for="user_id" class="block text-gray-700">User ID:</label>
+                <input type="text" id="user_id" name="user_id" class="w-full px-3 py-2 border border-gray-300 rounded" />
+            </div>
+            <div class="mb-4">
+                <label for="rental_duration" class="block text-gray-700">Rental Duration (in hours):</label>
+                <input type="number" id="rental_duration" name="rental_duration" class="w-full px-3 py-2 border border-gray-300 rounded" />
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Rent Bike</button>
+        </form>
+        <h2 class="text-xl font-bold mt-8">Blockchain Data</h2>
+        <pre id="chainData" class="bg-gray-100 p-4 rounded"></pre>
+    </div>
 
     <script>
         // Function to submit rental form
