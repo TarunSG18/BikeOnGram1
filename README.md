@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <h1>BikerOnGram</h1>
+        <h1>BikeOnGram</h1>
     </header>
     <div class="container">
         <h2>About The Project</h2>
