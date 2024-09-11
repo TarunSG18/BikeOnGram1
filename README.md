@@ -27,6 +27,29 @@
             </ul>
         </div>
 
+<h2>Instructions</h2>
+        <div class="Inst">
+            <p>During the webpage use the blockchain should be accessed by running the servers by,
+            <ol>
+                <li>Reach the source code folder by command - cd folder_name.
+                    <li>Run the command - python pyt.py; for which flask should be preinstalled.</li>
+                <li>To end the server process, press key combination Crlt + C.</li>
+            </ol>
+            Crentials:- Bike ID - B001, User ID - U123.
+            </p>
+        </div>
+        
+ <h2>Limitations</h2>
+ <div class="bugs">
+            <ul>
+                <li>The side bar not extended till the max height</li>
+                <li>Notification option not working</li>
+                <li>Messages option not working</li>
+                <li>Like, comment and share buttons not working</li>
+                <li>In the explore option the cities cant be accessed</li>
+            </ul>
+        </div>
+        
    <h2>Uses</h2>
         <div class="uses-list">
             <ul>
