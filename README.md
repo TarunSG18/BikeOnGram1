@@ -22,6 +22,8 @@
                 <li>PHP</li>
                 <li>SQL</li>
                 <li>NoSQL</li>
+                <li>Python</li>
+                <li>Ganache</li>
             </ul>
         </div>
 
