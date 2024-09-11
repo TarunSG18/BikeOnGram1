@@ -1,188 +1,119 @@
-<html></html>
+<html>
 <head>
-    <title>BikeOnGram.Search</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .search-container {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 3rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            color: #333;
-            width: 600px;
-        }
-        .logo {
-            font-family: 'Pacifico', cursive;
-            font-size: 3rem;
-            font-weight: 700;
-            color: #333;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .logo i {
-            margin-right: 0.5rem;
-            color: #ff6f61;
-        }
-        .search-box {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 1.5rem;
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 1.5rem;
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .search-box input[type="text"] {
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 1rem;
-            margin-right: 0.5rem;
-            flex-grow: 1;
-            color: black;
-            background-color: rgba(255, 255, 255, 0.8);
-        }
-        .search-box button {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 1rem;
-            background-color: #ff6f61;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .search-box button:hover {
-            background-color: #e65c50;
-        }
-        .output-box {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 1rem;
-            margin-top: 1.5rem;
-            color: #333;
-            text-align: left;
-            height: 300px;
-            overflow-y: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="search-container">
-        <div class="logo">
-            <i class="fas fa-bicycle"></i> BikeOnGram
+<body class="bg-gradient-to-r from-pink-300 to-pink-500 flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-lg shadow-lg p-10 w-[32rem]">
+        <div class="text-center mb-6">
+            <div class="flex items-center justify-center mb-2">
+                <i class="fas fa-bicycle text-4xl text-orange-500"></i>
+                <span class="ml-2 text-4xl font-pacifico" style="font-family: 'Pacifico', cursive;">BikeOnGram</span>
+            </div>
+            <p class="text-gray-600">Bike Search</p>
         </div>
-        <p class="text-xl italic">Bike Search</p>
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search...">
-            <button onclick="search()">SEARCH</button>
+        <div class="mb-6">
+            <div class="flex items-center bg-white rounded-full shadow-md p-2">
+                <input id="searchInput" type="text" placeholder="Search..." class="flex-grow px-4 py-2 text-gray-700 rounded-l-full focus:outline-none border border-gray-300 shadow-sm">
+                <button onclick="processInput()" class="bg-orange-500 text-white px-6 py-2 rounded-full ml-2">SEARCH</button>
+            </div>
         </div>
-        <div class="output-box" id="outputBox">
-            <p>Output will be displayed here...</p>
+        <div class="bg-white rounded-lg shadow-md p-6 h-64 border border-gray-300">
+            <p id="output" class="text-gray-600">Output will be displayed here...</p>
         </div>
     </div>
 
     <script>
-        function search() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const outputBox = document.getElementById('outputBox');
-            let output = '';
+        function processInput() {
+            const input = document.getElementById('searchInput').value;
+            const output = document.getElementById('output');
 
-            // Simple AI responses based on different types of bikes
-            switch (input) {
-                case "N250":
-                    output = `
-                        <h2 class="text-2xl font-bold">Mountain Bike</h2>
-                        <p><strong>Milage:</strong> 30-40 kmpl</p>
-                        <p><strong>Engine:</strong> 250cc</p>
-                        <p><strong>Power:</strong> 20 HP</p>
-                        <p><strong>Torque:</strong> 22 Nm</p>
-                        <p><strong>Safety:</strong> ABS, Traction Control</p>
-                        <p><strong>Brakes:</strong> Disc brakes</p>
-                        <p><strong>Features:</strong> Sturdy frame, Wide tires, Suspension</p>
-                    `;
-                    break;
-                case "R15":
-                    output = `
-                        <h2 class="text-2xl font-bold">Road Bike</h2>
-                        <p><strong>Milage:</strong> 50-60 kmpl</p>
-                        <p><strong>Engine:</strong> 150cc</p>
-                        <p><strong>Power:</strong> 15 HP</p>
-                        <p><strong>Torque:</strong> 14 Nm</p>
-                        <p><strong>Safety:</strong> ABS</p>
-                        <p><strong>Brakes:</strong> Disc brakes</p>
-                        <p><strong>Features:</strong> Lightweight frame, Narrow tires, Aerodynamic design</p>
-                    `;
-                    break;
-                case "NS200":
-                    output = `
-                        <h2 class="text-2xl font-bold">Hybrid Bike</h2>
-                        <p><strong>Milage:</strong> 40-50 kmpl</p>
-                        <p><strong>Engine:</strong> 200cc</p>
-                        <p><strong>Power:</strong> 18 HP</p>
-                        <p><strong>Torque:</strong> 20 Nm</p>
-                        <p><strong>Safety:</strong> ABS, Traction Control</p>
-                        <p><strong>Brakes:</strong> Disc brakes</p>
-                        <p><strong>Features:</strong> Versatile design, Medium tires, Comfortable seating</p>
-                    `;
-                    break;
-                case "Ather":
-                    output = `
-                        <h2 class="text-2xl font-bold">Electric Bike</h2>
-                        <p><strong>Milage:</strong> 70-100 km per charge</p>
-                        <p><strong>Engine:</strong> Electric motor</p>
-                        <p><strong>Power:</strong> 5-10 kW</p>
-                        <p><strong>Torque:</strong> 40 Nm</p>
-                        <p><strong>Safety:</strong> ABS, Regenerative braking</p>
-                        <p><strong>Brakes:</strong> Disc brakes</p>
-                        <p><strong>Features:</strong> Eco-friendly, Low running cost, Quiet operation</p>
-                    `;
-                    break;
-                case "MT15":
-                    output = `
-                        <h2 class="text-2xl font-bold">Folding Bike</h2>
-                        <p><strong>Milage:</strong> 40-50 kmpl</p>
-                        <p><strong>Engine:</strong> 150cc</p>
-                        <p><strong>Power:</strong> 12 HP</p>
-                        <p><strong>Torque:</strong> 13 Nm</p>
-                        <p><strong>Safety:</strong> Basic safety features</p>
-                        <p><strong>Brakes:</strong> V-brakes</p>
-                        <p><strong>Features:</strong> Compact design, Easy to carry, Ideal for urban commuting</p>
-                    `;
-                    break;
-                case "Freedom":
-                    output = `
-                        <h2 class="text-2xl font-bold">BMX Bike</h2>
-                        <p><strong>Milage:</strong> N/A</p>
-                        <p><strong>Engine:</strong> N/A</p>
-                        <p><strong>Power:</strong> N/A</p>
-                        <p><strong>Torque:</strong> N/A</p>
-                        <p><strong>Safety:</strong> Reinforced frame, Safety gear recommended</p>
-                        <p><strong>Brakes:</strong> U-brakes</p>
-                        <p><strong>Features:</strong> Durable frame, Designed for stunts, Compact size</p>
-                    `;
-                    break;
-                default:
-                    output = 'Sorry, I do not have information on that bike';
+            // Simulate AI processing
+            let processedOutput;
+            if (input.toUpperCase() === 'N250') {
+                processedOutput = `
+                    <strong>Details for N250:</strong><br>
+                    Milage: 30-40km<br>
+                    Engine: 250cc<br>
+                    Power: 25bhp<br>
+                    Torque: 22n/m<br>
+                    Safety: ABS<br>
+                    Brakes: Disc<br>
+                    Features: Bluetooth
+                `;
             }
-
-            outputBox.innerHTML = `<p>${output}</p>`;
+                else if (input.toUpperCase() === 'NS200') {
+                processedOutput = `
+                    <strong>Details for NS200:</strong><br>
+                    Milage: 25-35km<br>
+                    Engine: 200cc<br>
+                    Power: 25bhp<br>
+                    Torque: 19n/m<br>
+                    Safety: ABS<br>
+                    Brakes: Disc<br>
+                    Features: Bluetooth
+                `;
+            
+            } 
+            else if (input.toUpperCase() === 'R15') {
+                processedOutput = `
+                    <strong>Details for R15:</strong><br>
+                    Milage: 50-60km<br>
+                    Engine: 155cc<br>
+                    Power: 19bhp<br>
+                    Torque: 14n/m<br>
+                    Safety: ABS<br>
+                    Brakes: Disc<br>
+                    Features: Bluetooth, TFT
+                `;
+            
+            }
+            else if (input.toUpperCase() === 'MT15') {
+                processedOutput = `
+                    <strong>Details for MT15:</strong><br>
+                    Milage: 45-55km<br>
+                    Engine: 155cc<br>
+                    Power: 19bhp<br>
+                    Torque: 14n/m<br>
+                    Safety: ABS<br>
+                    Brakes: Disc<br>
+                    Features: Bluetooth
+                `;
+            
+            }
+            else if (input.toLowerCase() === 'freedom') {
+                processedOutput = `
+                    <strong>Details for Bajaj Freedom:</strong><br>
+                    Milage: 60-75km<br>
+                    Engine: cc<br>
+                    Power: 9bhp<br>
+                    Torque: 10n/m<br>
+                    Safety: N/A<br>
+                    Brakes: Drum<br>
+                    Features: Switchable fuel type
+                `;
+            
+            }
+            else if (input.toLowerCase() === 'splendor') {
+                processedOutput = `
+                    <strong>Details for Splendor:</strong><br>
+                    Milage: 65-80km<br>
+                    Engine: 99cc<br>
+                    Power: 9bhp<br>
+                    Torque: 8.5n/m<br>
+                    Safety: Strength<br>
+                    Brakes: Drum<br>
+                    Features: Bluetooth
+                `;
+            
+            }
+            else {
+                processedOutput = `No details available for: ${input}`;
+            }
+        
+            // Display the result
+            output.innerHTML = processedOutput;
         }
     </script>
 </body>
