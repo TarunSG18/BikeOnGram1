@@ -1,0 +1,117 @@
+<html lang="en"></html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Instagram Reels - Bike Videos
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Pacifico&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+  </style>
+ </head>
+ <body class="bg-white flex items-center justify-center min-h-screen transition-colors duration-300">
+  <div class="absolute top-4 left-4 flex flex-col items-center">
+   <i class="fas fa-motorcycle text-6xl text-orange-500 mb-2">
+   </i>
+   <h1 class="text-4xl font-bold text-gray-800" style="font-family: 'Pacifico', cursive;">
+    BikeOnGram Reels
+   </h1>
+  </div>
+  <div class="absolute top-4 right-4">
+   <button id="themeToggleBtn" class="bg-gray-800 text-white p-2 rounded-full">
+    <i class="fas fa-sun">
+    </i>
+   </button>
+  </div>
+  <div class="flex items-center space-x-8">
+   <div class="relative border-4 border-orange-500 rounded-3xl overflow-hidden" style="width: 400px; height: 700px;">
+    <div class="h-full" id="videoContainer">
+     <video id="reelVideo1" autoplay loop muted class="w-full h-full object-cover">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
+      Your browser does not support the video tag.
+     </video>
+     <video id="reelVideo2" autoplay loop muted class="w-full h-full object-cover hidden">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
+      Your browser does not support the video tag.
+     </video>
+     <video id="reelVideo3" autoplay loop muted class="w-full h-full object-cover hidden">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
+      Your browser does not support the video tag.
+     </video>
+    </div>
+    <button id="playPauseBtn" class="absolute bottom-4 right-4 bg-white text-black p-2 rounded-full">
+     <i class="fas fa-pause">
+     </i>
+    </button>
+    <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white text-black p-2 rounded-full">
+     <i class="fas fa-chevron-up">
+     </i>
+    </button>
+    <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-black p-2 rounded-full">
+     <i class="fas fa-chevron-down">
+     </i>
+    </button>
+   </div>
+  </div>
+  <script>
+   const videos = document.querySelectorAll('video');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playIcon = '<i class="fas fa-play"></i>';
+        const pauseIcon = '<i class="fas fa-pause"></i>';
+        let currentVideoIndex = 0;
+
+        playPauseBtn.addEventListener('click', () => {
+            const currentVideo = videos[currentVideoIndex];
+            if (currentVideo.paused) {
+                currentVideo.play();
+                playPauseBtn.innerHTML = pauseIcon;
+            } else {
+                currentVideo.pause();
+                playPauseBtn.innerHTML = playIcon;
+            }
+        });
+
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const sunIcon = '<i class="fas fa-sun"></i>';
+        const moonIcon = '<i class="fas fa-moon"></i>';
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('bg-white');
+            document.body.classList.toggle('bg-gray-900');
+            document.body.classList.toggle('text-black');
+            document.body.classList.toggle('text-white');
+
+            if (document.body.classList.contains('bg-gray-900')) {
+                themeToggleBtn.innerHTML = sunIcon;
+                themeToggleBtn.classList.remove('bg-gray-800');
+                themeToggleBtn.classList.add('bg-yellow-500');
+            } else {
+                themeToggleBtn.innerHTML = moonIcon;
+                themeToggleBtn.classList.remove('bg-yellow-500');
+                themeToggleBtn.classList.add('bg-gray-800');
+            }
+        });
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        prevBtn.addEventListener('click', () => {
+            videos[currentVideoIndex].classList.add('hidden');
+            currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+            videos[currentVideoIndex].classList.remove('hidden');
+        });
+
+        nextBtn.addEventListener('click', () => {
+            videos[currentVideoIndex].classList.add('hidden');
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            videos[currentVideoIndex].classList.remove('hidden');
+        });
+  </script>
+ </body>
+</html>
