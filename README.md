@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <h1>BikerOnGram</h1>
+        <h1>BikeOnGram</h1>
     </header>
     <div class="container">
         <h2>About The Project</h2>
@@ -22,6 +22,8 @@
                 <li>PHP</li>
                 <li>SQL</li>
                 <li>NoSQL</li>
+                <li>Python</li>
+                <li>Ganache</li>
             </ul>
         </div>
 
